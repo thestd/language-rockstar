@@ -1,14 +1,95 @@
-# If this is your first time writing a language grammar, check out:
-#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+#Rockstar language grammar v1.0
 
 'scopeName': 'source.rockstar'
 'name': 'Rockstar'
 'fileTypes': [
-  'extension'
+  'rock'
+  'rockstar'
 ]
 'patterns': [
   {
-    'match': '^\\s*@@.*$'
-    'name': 'comment'
+    'begin': '('
+    'end': ')'
+    'comment': 'comment'
+    'name': 'punctuation.definition.comment.rockstar'
   }
+  {
+    'match': '(true|false|right|yes|ok|wrong|no|lies)\i'
+    'comment': 'boolean'
+    'name': 'constant.language.rockstar'
+  }
+  {
+    'match': '(nothing|nowhere|nobody|null)\i'
+    'comment': 'null'
+    'name': 'constant.language.rockstar'
+  }
+  {
+    'match': '((A|An|The|My|Your)[ ][a-z]+)\i'
+    'comment': 'common'
+    'name': 'variable.other.rockstar'
+  }
+  {
+    'match': '[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*'
+    'comment': 'proper'
+    'name': 'variable.other.rockstar'
+  }
+  {
+    'match': '(it|he|she|him|her|them|they)\i'
+    'comment': 'pronoun'
+    'name': 'variable.other.rockstar'
+  }
+  {
+    'match': '(\d+(\.\d*)?|\.\d+)'
+    'comment': 'numberLiteral'
+    'name': 'constant.numeric.rockstar'
+  }
+  {
+    'match': '"'
+    'name': 'punctuation.definition.string.begin'
+  }
+  {
+    'match': "(is( not)?|ain't|was|were)\i"
+    'comment': 'equals'
+    'name': 'keyword.other.rockstar'
+  }
+  {
+    'match': '((higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as)\i'
+    'comment': 'comparator'
+    'name': 'keyword.other.rockstar'
+  }
+  {
+    'match': '(While|Until|Continue|Break it down|break|Take it to the top)\i'
+    'comment': 'loops'
+    'name': 'keyword.control.rockstar'
+  }
+  {
+    'match': ','
+    'scope': 'punctuation.separator.rockstar'
+  }
+  {
+    'match': '(If|Else)\i'
+    'comment': 'conditional'
+    'name': 'keyword.control.conditional.rockstar'
+  }
+  {
+    'match': '(taking|takes|and|Give back)\i'
+    'comment': 'methods'
+    'name': 'keyword.other.rockstar'
+  }
+  {
+    'match': '(Say|Shout|Whisper|Scream|Listen( to)?)\i'
+    'comment': 'io'
+    'name': 'keyword.other.rockstar'
+  }
+  {
+    'match': '(Put|into)\i'
+    'comment': 'assignment'
+    'name': 'keyword.other.rockstar'
+  }
+  {
+    'match': '(Knock|down|Build|up|plus|with|minus|without|times|of|over|by)\i'
+    'comment': 'arithmetic'
+    'name': 'keyword.other.rockstar'
+  }
+
 ]
