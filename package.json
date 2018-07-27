@@ -10,6 +10,7 @@
     "syntax"
   ],
   "repository": "https://github.com/faradzhev/language-rockstar",
+  "bugs": "https://github.com/faradzhev/language-rockstar/issues",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
