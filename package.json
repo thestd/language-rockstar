@@ -1,12 +1,15 @@
 {
   "name": "language-rockstar",
-  "version": "0.0.0",
-  "description": "A short description of your language package",
+  "version": "1.0.0",
+  "description": "Rockstar syntax highlighting package for Atom",
   "keywords": [
     "language",
-    "grammar"
+    "grammar",
+    "rock",
+    "rockstar",
+    "syntax"
   ],
-  "repository": "https://github.com/atom/language-rockstar",
+  "repository": "https://github.com/faradzhev/language-rockstar",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
