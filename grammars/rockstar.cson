@@ -6,7 +6,10 @@ fileTypes: [
 ]
 patterns: [
   {
-    include: '#comments'
+    # include: '#variable'
+  }
+  {
+    include: '#comment'
   }
   {
     include: '#boolean'
@@ -18,31 +21,28 @@ patterns: [
     include: '#common'
   }
   {
-    include: '#proper'
-  }
-  {
     include: '#pronoun'
   }
   {
-    include: '#numbers'
+    include: '#number'
   }
   {
-    include: '#separators'
+    include: '#separator'
   }
   {
-    include: '#equals'
+    include: '#equal'
   }
   {
     include: '#comparator'
   }
   {
-    include: '#loops'
+    include: '#loop'
   }
   {
     include: '#conditional'
   }
   {
-    include: '#methods'
+    include: '#method'
   }
   {
     include: '#io'
@@ -56,126 +56,144 @@ patterns: [
 
 ]
 repository:
-  comments:
+  comment: #WORKS
     patterns: [
       {
-        begin: '('
+        begin: '\\('
         beginCaptures:
           '0':
             name: 'punctuation.definition.comment.begin.rockstar'
-        end: ')'
+        end: '\\)'
         endCaptures:
           '0':
             name: 'punctuation.definition.comment.end.rockstar'
-        name: 'comment.block.scilab'
+        name: 'punctuation.definition.comment.block.rockstar'
       }
     ]
-  boolean:
+  boolean: #WORKS
     patterns: [
       {
-        match: '(true|false|right|yes|ok|wrong|no|lies)\i'
+        match: 'true|false|right|yes|ok|wrong|no($| +)|lies'
         name: 'constant.language.rockstar'
       }
     ]
-  null:
+  null: #WORKS
     patterns: [
       {
-        match: '(nothing|nowhere|nobody|null)\i'
+        match: 'nothing|nowhere|nobody|null'
         name: 'constant.language.rockstar'
       }
     ]
-  common:
+  common: #WORKS
     patterns: [
       {
-        match: '((A|An|The|My|Your)[ ][a-z]+)\i'
+        match: '(A|An|The|My|Your)\\i[ ][a-z]+'
         name: 'variable.other.rockstar'
       }
     ]
-  proper:
+  variable: #DISABLED
     patterns: [
       {
-        match: '[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*'
+        match: '(^| +)[a-zA-Z]*($| +)'
         name: 'variable.other.rockstar'
       }
     ]
-  pronoun:
+  pronoun: #TESTING
     patterns: [
       {
-        match: '(it|he|she|him|her|them|they)\i'
+        match: '\\b(it|he|she|him|her|them|they)\\b'
         name: 'variable.other.rockstar'
       }
     ]
-  numbers:
+  number: #TESTING
     patterns: [
       {
-        match: '(\d+(\.\d*)?|\.\d+)'
+        match: "\\d+(\\.\\d*)?|\\.\\d+"
         name: 'constant.numeric.rockstar'
       }
     ]
-  separators:
+  separator:
     patterns: [
       {
-        match: '"'
-        name: 'punctuation.definition.string.begin'
+        begin: '"'
+        beginCaptures:
+          '0':
+            name: 'punctuation.definition.string.begin.rockstar'
+        end: '"'
+        endCaptures:
+          '0':
+            name: 'punctuation.definition.string.end.rockstar'
+        name: 'punctuation.definition.string.text.rockstar'
+      }
+      {
+        begin: "'"
+        beginCaptures:
+          '0':
+            name: 'punctuation.definition.string.begin.rockstar'
+        end: "'"
+        endCaptures:
+          '0':
+            name: 'punctuation.definition.string.end.rockstar'
+        name: 'punctuation.definition.string.text.rockstar'
       }
       {
         match: ','
-        scope: 'punctuation.separator.rockstar'
+        scope: 'punctuation.definition.separator.rockstar'
       }
     ]
-  equals:
+  equal:
     patterns: [
       {
-        match: "(is( not)?|ain't|was|were)\i"
+        match: "is( not($| +))?|ain't|was|were"
         name: 'keyword.other.rockstar'
       }
     ]
-  comparator:
+  comparator: #WORKS
     patterns: [
       {
-        match: '((higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as)\i'
+        match: '(higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as'
         name: 'keyword.other.rockstar'
       }
     ]
-  loops:
+  loop: #WORKS
     patterns: [
       {
-        match: '(While|Until|Continue|Break it down|break|Take it to the top)\i'
+        match: '(^| )(While|Until|Continue|Break it down|break|Take it to the top)($| )'
         name: 'keyword.control.rockstar'
       }
     ]
-  conditional:
+  conditional: #WORKS
     patterns: [
       {
-        match: '(If|Else)\i'
+        match: '(^| )(If|if|Else|else)'
         name: 'keyword.control.conditional.rockstar'
       }
     ]
-  methods:
+  method: #TESTING
     patterns: [
       {
-        match: '(taking|takes|and|Give back)\i'
+        match: 'taking|takes|and|Give back'
         name: 'keyword.other.rockstar'
       }
     ]
-  io:
+  io: #WORKS
     patterns: [
       {
-        match: '(Say|Shout|Whisper|Scream|Listen( to)?)\i'
+        match: '(^| )(Say|Shout|Whisper|Scream|Listen( to)?)'
         name: 'keyword.other.rockstar'
       }
     ]
   assignment:
     patterns: [
       {
-        match: '(Put|into)\i'
+        match: '(^| )(Put|into)($| )'
         name: 'keyword.other.rockstar'
       }
     ]
   arithmetic:
     patterns: [
       {
-        match: '(Knock|down|Build|up|plus|with|minus|without|times|of|over|by)\i'
+        match: '(Knock (\\w+) down|Build (\\w+) up|plus|with|minus|without|times|of|over|by)'
         name: 'keyword.other.rockstar'
       }
     ]
