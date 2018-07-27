@@ -1,0 +1,46 @@
+Midnight takes your heart and your soul
+// <- variable.other
+//       ^^^^^ keyword.other
+//                        ^^^ keyword.other
+//             ^^^^^^^^^^ variable.other
+//                            ^^^^^^^^^ variable.other
+While your heart is as high as your soul
+//               ^^ keyword.other
+//                  ^^^^^^^^^^ keyword.other
+//                             ^^^^^^^^^ variable.other
+Put your heart without your soul into your heart
+
+Give back your heart
+// <- keyword.other
+//   ^ keyword.other
+//        ^^^^^^^^^^ variable.other
+
+Desire is a lovestruck ladykiller
+//        ^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric
+My world is nothing
+//          ^ constant.language.rockstar
+Fire is ice
+Hate is water
+Until my world is Desire
+Build my world up
+If Midnight taking my world, Fire is nothing and Midnight taking my world, Hate is nothing
+//                         ^ punctuation.separator.rockstar
+//                                                                       ^ punctuation.separator.rockstar
+Shout "FizzBuzz!"
+//    ^^^^^^^^^^^ string.quoted
+//    ^ punctuation.definition.string.begin
+//              ^ punctuation.definition.string.end
+Take it to the top
+  (this is a blank line to end the if statement)
+  // <- punctuation.definition.comment.rockstar
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block
+//                                             ^ punctuation.definition.comment.rockstar
+If Midnight taking my world, Fire is nothing
+Shout "Fizz!"
+Take it to the top
+
+If Midnight taking my world, Hate is nothing
+Say "Buzz!"
+Take it to the top
+
+Whisper my world
