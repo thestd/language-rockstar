@@ -1,6 +1,9 @@
 scopeName: 'source.rockstar'
 name: 'Rockstar'
-fileTypes: [ 'rock', 'rockstar' ]
+fileTypes: [
+  'rock'
+  'rockstar'
+]
 patterns: [
   {
     include: '#comments'
@@ -123,7 +126,7 @@ repository:
   equals:
     patterns: [
       {
-        match: '(is( not)?|ain\'t|was|were)\i'
+        match: "(is( not)?|ain't|was|were)\i"
         name: 'keyword.other.rockstar'
       }
     ]
