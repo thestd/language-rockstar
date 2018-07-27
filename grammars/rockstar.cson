@@ -1,95 +1,178 @@
-#Rockstar language grammar v1.0
-
-'scopeName': 'source.rockstar'
-'name': 'Rockstar'
-'fileTypes': [
-  'rock'
-  'rockstar'
-]
-'patterns': [
+scopeName: 'source.rockstar'
+name: 'Rockstar'
+fileTypes: [ 'rock', 'rockstar' ]
+patterns: [
   {
-    'begin': '('
-    'end': ')'
-    'comment': 'comment'
-    'name': 'punctuation.definition.comment.rockstar'
+    include: '#comments'
   }
   {
-    'match': '(true|false|right|yes|ok|wrong|no|lies)\i'
-    'comment': 'boolean'
-    'name': 'constant.language.rockstar'
+    include: '#boolean'
   }
   {
-    'match': '(nothing|nowhere|nobody|null)\i'
-    'comment': 'null'
-    'name': 'constant.language.rockstar'
+    include: '#null'
   }
   {
-    'match': '((A|An|The|My|Your)[ ][a-z]+)\i'
-    'comment': 'common'
-    'name': 'variable.other.rockstar'
+    include: '#common'
   }
   {
-    'match': '[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*'
-    'comment': 'proper'
-    'name': 'variable.other.rockstar'
+    include: '#proper'
   }
   {
-    'match': '(it|he|she|him|her|them|they)\i'
-    'comment': 'pronoun'
-    'name': 'variable.other.rockstar'
+    include: '#pronoun'
   }
   {
-    'match': '(\d+(\.\d*)?|\.\d+)'
-    'comment': 'numberLiteral'
-    'name': 'constant.numeric.rockstar'
+    include: '#numbers'
   }
   {
-    'match': '"'
-    'name': 'punctuation.definition.string.begin'
+    include: '#separators'
   }
   {
-    'match': "(is( not)?|ain't|was|were)\i"
-    'comment': 'equals'
-    'name': 'keyword.other.rockstar'
+    include: '#equals'
   }
   {
-    'match': '((higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as)\i'
-    'comment': 'comparator'
-    'name': 'keyword.other.rockstar'
+    include: '#comparator'
   }
   {
-    'match': '(While|Until|Continue|Break it down|break|Take it to the top)\i'
-    'comment': 'loops'
-    'name': 'keyword.control.rockstar'
+    include: '#loops'
   }
   {
-    'match': ','
-    'scope': 'punctuation.separator.rockstar'
+    include: '#conditional'
   }
   {
-    'match': '(If|Else)\i'
-    'comment': 'conditional'
-    'name': 'keyword.control.conditional.rockstar'
+    include: '#methods'
   }
   {
-    'match': '(taking|takes|and|Give back)\i'
-    'comment': 'methods'
-    'name': 'keyword.other.rockstar'
+    include: '#io'
   }
   {
-    'match': '(Say|Shout|Whisper|Scream|Listen( to)?)\i'
-    'comment': 'io'
-    'name': 'keyword.other.rockstar'
+    include: '#assignment'
   }
   {
-    'match': '(Put|into)\i'
-    'comment': 'assignment'
-    'name': 'keyword.other.rockstar'
-  }
-  {
-    'match': '(Knock|down|Build|up|plus|with|minus|without|times|of|over|by)\i'
-    'comment': 'arithmetic'
-    'name': 'keyword.other.rockstar'
+    include: '#arithmetic'
   }
 
 ]
+repository:
+  comments:
+    patterns: [
+      {
+        begin: '('
+        beginCaptures:
+          '0':
+            name: 'punctuation.definition.comment.begin.rockstar'
+        end: ')'
+        endCaptures:
+          '0':
+            name: 'punctuation.definition.comment.end.rockstar'
+        name: 'comment.block.scilab'
+      }
+    ]
+  boolean:
+    patterns: [
+      {
+        match: '(true|false|right|yes|ok|wrong|no|lies)\i'
+        name: 'constant.language.rockstar'
+      }
+    ]
+  null:
+    patterns: [
+      {
+        match: '(nothing|nowhere|nobody|null)\i'
+        name: 'constant.language.rockstar'
+      }
+    ]
+  common:
+    patterns: [
+      {
+        match: '((A|An|The|My|Your)[ ][a-z]+)\i'
+        name: 'variable.other.rockstar'
+      }
+    ]
+  proper:
+    patterns: [
+      {
+        match: '[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*'
+        name: 'variable.other.rockstar'
+      }
+    ]
+  pronoun:
+    patterns: [
+      {
+        match: '(it|he|she|him|her|them|they)\i'
+        name: 'variable.other.rockstar'
+      }
+    ]
+  numbers:
+    patterns: [
+      {
+        match: '(\d+(\.\d*)?|\.\d+)'
+        name: 'constant.numeric.rockstar'
+      }
+    ]
+  separators:
+    patterns: [
+      {
+        match: '"'
+        name: 'punctuation.definition.string.begin'
+      }
+      {
+        match: ','
+        scope: 'punctuation.separator.rockstar'
+      }
+    ]
+  equals:
+    patterns: [
+      {
+        match: '(is( not)?|ain\'t|was|were)\i'
+        name: 'keyword.other.rockstar'
+      }
+    ]
+  comparator:
+    patterns: [
+      {
+        match: '((higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as)\i'
+        name: 'keyword.other.rockstar'
+      }
+    ]
+  loops:
+    patterns: [
+      {
+        match: '(While|Until|Continue|Break it down|break|Take it to the top)\i'
+        name: 'keyword.control.rockstar'
+      }
+    ]
+  conditional:
+    patterns: [
+      {
+        match: '(If|Else)\i'
+        name: 'keyword.control.conditional.rockstar'
+      }
+    ]
+  methods:
+    patterns: [
+      {
+        match: '(taking|takes|and|Give back)\i'
+        name: 'keyword.other.rockstar'
+      }
+    ]
+  io:
+    patterns: [
+      {
+        match: '(Say|Shout|Whisper|Scream|Listen( to)?)\i'
+        name: 'keyword.other.rockstar'
+      }
+    ]
+  assignment:
+    patterns: [
+      {
+        match: '(Put|into)\i'
+        name: 'keyword.other.rockstar'
+      }
+    ]
+  arithmetic:
+    patterns: [
+      {
+        match: '(Knock|down|Build|up|plus|with|minus|without|times|of|over|by)\i'
+        name: 'keyword.other.rockstar'
+      }
+    ]
