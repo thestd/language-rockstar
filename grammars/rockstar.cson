@@ -6,9 +6,6 @@ fileTypes: [
 ]
 patterns: [
   {
-    # include: '#variable'
-  }
-  {
     include: '#comment'
   }
   {
@@ -53,6 +50,9 @@ patterns: [
   {
     include: '#arithmetic'
   }
+  # {
+  #   include: '#variable'
+  # }
 
 ]
 repository:
@@ -73,14 +73,14 @@ repository:
   boolean: #WORKS
     patterns: [
       {
-        match: 'true|false|right|yes|ok|wrong|no($| +)|lies'
+        match: '\\b(true|false|right|yes|ok|wrong|no($| +)|lies)\\b'
         name: 'constant.language.rockstar'
       }
     ]
   null: #WORKS
     patterns: [
       {
-        match: 'nothing|nowhere|nobody|null'
+        match: '\\b(nothing|nowhere|nobody|null)\\b'
         name: 'constant.language.rockstar'
       }
     ]
@@ -88,13 +88,6 @@ repository:
     patterns: [
       {
         match: '(A|An|The|My|Your)\\i[ ][a-z]+'
-        name: 'variable.other.rockstar'
-      }
-    ]
-  variable: #DISABLED
-    patterns: [
-      {
-        match: '(^| +)[a-zA-Z]*($| +)'
         name: 'variable.other.rockstar'
       }
     ]
@@ -144,7 +137,7 @@ repository:
   equal:
     patterns: [
       {
-        match: "is( not($| +))?|ain't|was|were"
+        match: "\\b(is( not($| +))?|ain't|was|were)\\b"
         name: 'keyword.other.rockstar'
       }
     ]
@@ -172,7 +165,7 @@ repository:
   method: #TESTING
     patterns: [
       {
-        match: 'taking|takes|and|Give back'
+        match: '\\b(taking|takes|and|Give back)\\b'
         name: 'keyword.other.rockstar'
       }
     ]
@@ -193,7 +186,14 @@ repository:
   arithmetic:
     patterns: [
       {
-        match: '(Knock (\\w+) down|Build (\\w+) up|plus|with|minus|without|times|of|over|by)'
+        match: '(Knock | down|Build | up|plus|without|minus|with|times|of|over|by)'
         name: 'keyword.other.rockstar'
+      }
+    ]
+  variable: #DISABLED
+    patterns: [
+      {
+        match: '(^| +)[a-zA-Z]*($| +)'
+        name: 'variable.other.rockstar'
       }
     ]
