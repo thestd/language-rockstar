@@ -2,6 +2,8 @@
 
 Atom syntax grammar for the [Rockstar programming language](https://github.com/dylanbeattie/rockstar) for all of you Rockstar developers out there.
 
+![Rockstar Syntax Grammar for Atom](https://raw.githubusercontent.com/thestd/language-rockstar/master/assets/rockstar-screenshot.png)
+
 ## Installation
 
 ### Using Package Install
