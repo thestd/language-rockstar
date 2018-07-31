@@ -56,7 +56,7 @@ patterns: [
 
 ]
 repository:
-  comment: #WORKS
+  comment:
     patterns: [
       {
         begin: '\\('
@@ -70,35 +70,35 @@ repository:
         name: 'punctuation.definition.comment.block.rockstar'
       }
     ]
-  boolean: #WORKS
+  boolean:
     patterns: [
       {
         match: '\\b(true|false|right|yes|ok|wrong|no($| +)|lies)\\b'
         name: 'constant.language.rockstar'
       }
     ]
-  null: #WORKS
+  null:
     patterns: [
       {
         match: '\\b(nothing|nowhere|nobody|null)\\b'
         name: 'constant.language.rockstar'
       }
     ]
-  common: #WORKS
+  common:
     patterns: [
       {
         match: '(A|An|The|My|Your)\\i[ ][a-z]+'
         name: 'variable.other.rockstar'
       }
     ]
-  pronoun: #TESTING
+  pronoun:
     patterns: [
       {
         match: '\\b(it|he|she|him|her|them|they)\\b'
         name: 'variable.other.rockstar'
       }
     ]
-  number: #TESTING
+  number:
     patterns: [
       {
         match: "\\d+(\\.\\d*)?|\\.\\d+"
@@ -141,35 +141,35 @@ repository:
         name: 'keyword.other.rockstar'
       }
     ]
-  comparator: #WORKS
+  comparator:
     patterns: [
       {
         match: '(higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as'
         name: 'keyword.other.rockstar'
       }
     ]
-  loop: #WORKS
+  loop:
     patterns: [
       {
         match: '(^| )(While|Until|Continue|Break it down|break|Take it to the top)($| )'
         name: 'keyword.control.rockstar'
       }
     ]
-  conditional: #WORKS
+  conditional:
     patterns: [
       {
         match: '(^| )(If|if|Else|else)'
         name: 'keyword.control.conditional.rockstar'
       }
     ]
-  method: #TESTING
+  method:
     patterns: [
       {
         match: '\\b(taking|takes|and|Give back)\\b'
         name: 'keyword.other.rockstar'
       }
     ]
-  io: #WORKS
+  io:
     patterns: [
       {
         match: '(^| )(Say|Shout|Whisper|Scream|Listen( to)?)'
@@ -190,7 +190,7 @@ repository:
         name: 'keyword.other.rockstar'
       }
     ]
-  variable: #DISABLED
+  variable:
     patterns: [
       {
         match: '(^| +)[a-zA-Z]*($| +)'
