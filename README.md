@@ -13,7 +13,7 @@ Open the Atom Settings (`Ctrl`+`,` or `Cmd`+`,`). Select `+ Install`, and search
 Clone the repository into your Atom Packages directory and install with `npm`:
 ```
 cd ~/.atom/packages
-git clone https://github.com/faradzhev/language-rockstar
+git clone https://github.com/thestd/language-rockstar
 cd language-rockstar
 npm install
 ```
