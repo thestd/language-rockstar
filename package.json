@@ -1,6 +1,6 @@
 {
   "name": "language-rockstar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Rockstar syntax highlighting package for Atom",
   "keywords": [
     "language",
