@@ -118,17 +118,17 @@ repository:
             name: 'punctuation.definition.string.end.rockstar'
         name: 'punctuation.definition.string.text.rockstar'
       }
-      {
-        begin: "'"
-        beginCaptures:
-          '0':
-            name: 'punctuation.definition.string.begin.rockstar'
-        end: "'"
-        endCaptures:
-          '0':
-            name: 'punctuation.definition.string.end.rockstar'
-        name: 'punctuation.definition.string.text.rockstar'
-      }
+      # {
+      #   begin: "'"
+      #   beginCaptures:
+      #     '0':
+      #       name: 'punctuation.definition.string.begin.rockstar'
+      #   end: "'"
+      #   endCaptures:
+      #     '0':
+      #       name: 'punctuation.definition.string.end.rockstar'
+      #   name: 'punctuation.definition.string.text.rockstar'
+      # }
       {
         match: "'\\w*'"
         name: 'punctuation.definition.string.begin.rockstar'
