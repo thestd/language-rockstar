@@ -119,6 +119,17 @@ repository:
         name: 'punctuation.definition.string.text.rockstar'
       }
       {
+        begin: "'"
+        beginCaptures:
+          '0':
+            name: 'punctuation.definition.string.begin.rockstar'
+        end: "'"
+        endCaptures:
+          '0':
+            name: 'punctuation.definition.string.end.rockstar'
+        name: 'punctuation.definition.string.text.rockstar'
+      }
+      {
         match: "'\\w*'"
         name: 'punctuation.definition.string.begin.rockstar'
       }
@@ -130,7 +141,7 @@ repository:
   equal:
     patterns: [
       {
-        match: "\\b(is( not($| +))?|ain't|was|were)\\b"
+        match: "\\b('s|is( not($| +))?|ain't|was|were)\\b"
         name: 'keyword.other.rockstar'
       }
     ]
